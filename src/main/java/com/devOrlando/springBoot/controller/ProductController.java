@@ -49,7 +49,7 @@ public class ProductController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
         }
 
-        productO.get().add(linkTo(methodOn(ProductController.class).getAllProducts()).withSelfRel("Products List"));
+        productO.get().add(linkTo(methodOn(ProductController.class).getAllProducts()).withRel("Products List"));
         return ResponseEntity.status(HttpStatus.OK).body(productO.get());
 
     }
